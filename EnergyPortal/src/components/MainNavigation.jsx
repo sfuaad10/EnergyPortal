@@ -1,8 +1,12 @@
-import { Navbar, Container, Nav } from "react-bootstrap";
+import { Navbar, Container, Nav, Button } from "react-bootstrap";
+import { useContext } from "react";
+import { AuthContext } from "../stores/AuthContext";
 
 import { Link } from "react-router-dom";
 
 const MainNavigation = () => {
+  const authCtx = useContext(AuthContext);
+
   return (
     <>
       <Navbar bg="dark" data-bs-theme="dark">
@@ -16,6 +20,7 @@ const MainNavigation = () => {
             </Nav.Link>
           </Nav>
         </Container>
+        <Button onClick={authCtx.onLogout}>Logout</Button>
       </Navbar>
     </>
   );

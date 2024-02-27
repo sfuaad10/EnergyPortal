@@ -13,7 +13,7 @@ const Information = () => {
 
   return (
     <Container>
-      <Table>
+      <Table responsive>
         <thead>
           <tr>
             <th>Name</th>

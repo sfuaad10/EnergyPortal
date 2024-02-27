@@ -14,7 +14,7 @@ const CustomTable = ({ tableData, ...props }) => {
 
   return (
     <Container>
-      <Table responsive {...props}>
+      <Table table-sm responsive {...props}>
         <thead>
           <tr>
             {tableHeaders.map((header, index) => (

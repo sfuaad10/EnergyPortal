@@ -20,7 +20,9 @@ const MainNavigation = () => {
             </Nav.Link>
           </Nav>
         </Container>
-        <Button onClick={authCtx.onLogout}>Logout</Button>
+        <Button variant="light" onClick={authCtx.onLogout}>
+          Logout
+        </Button>
       </Navbar>
     </>
   );

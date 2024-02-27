@@ -6,6 +6,7 @@ import Login from "./Login";
 
 const RootPage = () => {
   const authCtx = useContext(AuthContext);
+  console.log("root triggered");
   return (
     <>
       {authCtx.isLoggedIn ? (

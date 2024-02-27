@@ -1,7 +1,7 @@
 import { Table, Container } from "react-bootstrap";
 import { useState } from "react";
 
-const CustomTable = ({ tableData }) => {
+const CustomTable = ({ tableData, ...props }) => {
   const [itemQuery, setitemQuery] = useState("");
 
   const handleItemQuery = (e) => {
@@ -14,7 +14,7 @@ const CustomTable = ({ tableData }) => {
 
   return (
     <Container>
-      <Table responsive>
+      <Table responsive {...props}>
         <thead>
           <tr>
             {tableHeaders.map((header, index) => (

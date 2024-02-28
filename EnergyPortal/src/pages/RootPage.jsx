@@ -1,12 +1,8 @@
 import { Outlet } from "react-router-dom";
 import Login from "./Login";
 import React, { useContext } from "react";
-import {
-  LinkOutlined,
-  NotificationOutlined,
-  RobotOutlined,
-} from "@ant-design/icons";
-import { Breadcrumb, Layout, Menu, theme } from "antd";
+import { LinkOutlined, NotificationOutlined } from "@ant-design/icons";
+import { Layout, Menu, theme } from "antd";
 import { AuthContext } from "../stores/AuthContext";
 
 const { Header, Content, Sider } = Layout;
@@ -16,9 +12,9 @@ const HeaderItems = [
   { key: "2", label: "Weather" },
   { key: "3", label: "Distance" },
 ];
-const icons = [LinkOutlined, NotificationOutlined, RobotOutlined];
-const labels = ["Inverters", "Plants", "Transformers"];
-const childrenLabels = ["Stats", "Map", "Create"];
+const icons = [LinkOutlined, NotificationOutlined];
+const labels = ["Inverters", "Plants"];
+const childrenLabels = ["Stats", "Create"];
 
 const items2 = icons.map((icon, index) => {
   return {
@@ -84,15 +80,6 @@ const RootPage = () => {
               padding: "0 24px 24px",
             }}
           >
-            <Breadcrumb
-              style={{
-                margin: "16px 0",
-              }}
-            >
-              <Breadcrumb.Item>Home</Breadcrumb.Item>
-              <Breadcrumb.Item>List</Breadcrumb.Item>
-              <Breadcrumb.Item>App</Breadcrumb.Item>
-            </Breadcrumb>
             <Content
               style={{
                 padding: 24,

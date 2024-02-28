@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import Login from "./Login";
 import React, { useContext } from "react";
 import { LinkOutlined, NotificationOutlined } from "@ant-design/icons";
@@ -14,7 +14,7 @@ const HeaderItems = [
 ];
 const icons = [LinkOutlined, NotificationOutlined];
 const labels = ["Inverters", "Plants"];
-const childrenLabels = ["Stats", "Create"];
+const childrenLabels = [{ path: "/plants/info", label: "Details" }];
 
 const items2 = icons.map((icon, index) => {
   return {
@@ -24,7 +24,8 @@ const items2 = icons.map((icon, index) => {
     children: childrenLabels.map((childLabel, j) => {
       return {
         key: `${index + 1}.${j + 1}`,
-        label: childLabel,
+        label: childLabel.label,
+        path: childLabel.path, // Add the path property to each child item
       };
     }),
   };

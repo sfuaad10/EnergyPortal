@@ -1,14 +1,6 @@
-import { useLoaderData } from "react-router-dom";
-import CustomTable from "../components/CustomTable";
-import plantData from "../utils/plantsData";
-
 const HomePage = () => {
-  //<Button className="btn btn-secondary">Hello</Button>
-  const plantsData = useLoaderData();
   return (
     <>
-      <CustomTable tableData={plantsData} striped responsive />
-
       <main>
         <article>
           <h2>Welcome to the home page!</h2>
@@ -33,10 +25,5 @@ const HomePage = () => {
     </>
   );
 };
-
-export async function loader() {
-  //get plants in json format and return this
-  return plantData;
-}
 
 export default HomePage;

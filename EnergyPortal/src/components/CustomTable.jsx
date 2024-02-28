@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const CustomTable = ({ tableData, ...props }) => {
+const CustomTable = ({ tableData }) => {
   const [itemQuery, setitemQuery] = useState("");
 
   const handleItemQuery = (e) => {
@@ -13,7 +13,7 @@ const CustomTable = ({ tableData, ...props }) => {
 
   return (
     <>
-      <table table-sm responsive {...props}>
+      <table table-sm>
         <thead>
           <tr>
             {tableHeaders.map((header, index) => (

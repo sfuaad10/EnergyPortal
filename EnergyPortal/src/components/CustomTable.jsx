@@ -1,4 +1,3 @@
-import { Table, Container } from "react-bootstrap";
 import { useState } from "react";
 
 const CustomTable = ({ tableData, ...props }) => {
@@ -13,8 +12,8 @@ const CustomTable = ({ tableData, ...props }) => {
   const tableHeaders = tableData.length > 0 ? Object.keys(tableData[0]) : [];
 
   return (
-    <Container>
-      <Table table-sm responsive {...props}>
+    <>
+      <table table-sm responsive {...props}>
         <thead>
           <tr>
             {tableHeaders.map((header, index) => (
@@ -35,7 +34,7 @@ const CustomTable = ({ tableData, ...props }) => {
             ) : null
           )}
         </tbody>
-      </Table>
+      </table>
 
       <input
         type="text"
@@ -43,7 +42,7 @@ const CustomTable = ({ tableData, ...props }) => {
         value={itemQuery}
         onChange={handleItemQuery}
       />
-    </Container>
+    </>
   );
 };
 

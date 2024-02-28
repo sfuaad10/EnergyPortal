@@ -5,7 +5,12 @@ import plantData from "../utils/plantsData";
 const PlantInformation = () => {
   const plantData = useLoaderData();
 
-  return <CustomTable tableData={plantData} />;
+  return (
+    <>
+      <h3>Plant Information</h3>
+      <CustomTable tableData={plantData} />;
+    </>
+  );
 };
 
 export default PlantInformation;

@@ -8,7 +8,7 @@ import { AuthContext } from "../stores/AuthContext";
 const { Header, Content, Sider } = Layout;
 
 const HeaderItems = [
-  { key: "1", label: "Info" },
+  { key: "1", label: "Home" },
   { key: "2", label: "Weather" },
   { key: "3", label: "Distance" },
 ];

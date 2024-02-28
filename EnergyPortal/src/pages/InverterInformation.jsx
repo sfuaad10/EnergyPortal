@@ -5,7 +5,12 @@ import CustomTable from "../components/CustomTable";
 const InverterInformation = () => {
   const inverterData = useLoaderData();
 
-  return <CustomTable tableData={inverterData} striped responsive />;
+  return (
+    <>
+      <h3>Inverter Information</h3>
+      <CustomTable tableData={inverterData} striped responsive />;
+    </>
+  );
 };
 
 export default InverterInformation;

@@ -8,8 +8,8 @@ const router = createBrowserRouter([
     path: "/",
     element: <RootPage />,
     children: [
-      { path: "/", element: <HomePage /> },
-      { path: "plants/info", loader: plantsLoader, element: <Information /> },
+      { path: "/", loader: plantsLoader, element: <HomePage /> },
+      { path: "/info", loader: inverterloader, element: <Information /> },
     ],
   },
   // Added the new route for Home

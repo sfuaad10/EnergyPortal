@@ -38,63 +38,67 @@ const RootPage = () => {
   } = theme.useToken();
   return (
     <>
-      <Layout>
-        <Header
-          style={{
-            display: "flex",
-            alignItems: "center",
-          }}
-        >
-          <div className="demo-logo" />
-          <Menu
-            theme="dark"
-            mode="horizontal"
-            defaultSelectedKeys={["1"]}
-            items={HeaderItems}
-            style={{
-              flex: 1,
-              minWidth: 0,
-            }}
-          />
-          <button onClick={authCtx.onLogout}>Logout</button>
-        </Header>
+      {authCtx.isLoggedIn ? (
         <Layout>
-          <Sider
-            width={200}
+          <Header
             style={{
-              background: colorBgContainer,
+              display: "flex",
+              alignItems: "center",
             }}
           >
+            <div className="demo-logo" />
             <Menu
-              mode="inline"
+              theme="dark"
+              mode="horizontal"
               defaultSelectedKeys={["1"]}
-              defaultOpenKeys={["sub1"]}
+              items={HeaderItems}
               style={{
-                height: "100%",
-                borderRight: 0,
+                flex: 1,
+                minWidth: 0,
               }}
-              items={items2}
             />
-          </Sider>
-          <Layout
-            style={{
-              padding: "0 24px 24px",
-            }}
-          >
-            <Content
+            <button onClick={authCtx.onLogout}>Logout</button>
+          </Header>
+          <Layout>
+            <Sider
+              width={200}
               style={{
-                padding: 24,
-                margin: 0,
-                minHeight: 280,
                 background: colorBgContainer,
-                borderRadius: borderRadiusLG,
               }}
             >
-              <Outlet />
-            </Content>
+              <Menu
+                mode="inline"
+                defaultSelectedKeys={["1"]}
+                defaultOpenKeys={["sub1"]}
+                style={{
+                  height: "100%",
+                  borderRight: 0,
+                }}
+                items={items2}
+              />
+            </Sider>
+            <Layout
+              style={{
+                padding: "0 24px 24px",
+              }}
+            >
+              <Content
+                style={{
+                  padding: 24,
+                  margin: 0,
+                  minHeight: 280,
+                  background: colorBgContainer,
+                  borderRadius: borderRadiusLG,
+                }}
+              >
+                <Outlet />
+              </Content>
+            </Layout>
           </Layout>
         </Layout>
-      </Layout>
+      ) : (
+        <Login />
+      )}
     </>
   );
 };

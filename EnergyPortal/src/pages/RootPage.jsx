@@ -14,7 +14,7 @@ const HeaderItems = [
 ];
 const icons = [LinkOutlined, NotificationOutlined];
 const labels = ["Inverters", "Plants"];
-const childrenLabels = [{ path: "/plants/info", label: "Details" }];
+const childrenLabels = [{ path: "/info", label: "Details" }];
 
 const items2 = icons.map((icon, index) => {
   return {
@@ -24,8 +24,11 @@ const items2 = icons.map((icon, index) => {
     children: childrenLabels.map((childLabel, j) => {
       return {
         key: `${index + 1}.${j + 1}`,
-        label: childLabel.label,
-        path: childLabel.path, // Add the path property to each child item
+        label: (
+          <NavLink to={`${labels[index]}${childLabel.path}`}>
+            {childLabel.label}
+          </NavLink>
+        ),
       };
     }),
   };

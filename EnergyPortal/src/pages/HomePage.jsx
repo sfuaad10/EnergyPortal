@@ -5,6 +5,7 @@ import plantData from "../utils/plantsData";
 const HomePage = () => {
   //<Button className="btn btn-secondary">Hello</Button>
   const plantsData = useLoaderData();
+  console.log;
   return (
     <>
       <CustomTable tableData={plantsData} striped responsive />

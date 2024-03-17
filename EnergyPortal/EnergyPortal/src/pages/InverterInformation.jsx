@@ -8,7 +8,7 @@ const InverterInformation = () => {
   return (
     <>
       <h3>Inverter Information</h3>
-      <CustomTable tableData={inverterData} striped responsive />;
+      <CustomTable tableData={inverterData} striped responsive />
     </>
   );
 };

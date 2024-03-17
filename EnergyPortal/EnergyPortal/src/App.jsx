@@ -7,6 +7,8 @@ import InverterInformation, {
 import PlantInformation, {
   loader as plantLoader,
 } from "./pages/PlantInformation";
+import CreatePlant, { action as plantCreation } from "./pages/CreatePlant";
+import EditPlant from "./pages/EditPlant";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +25,15 @@ const router = createBrowserRouter([
         path: "/inverters/info",
         loader: inverterloader,
         element: <InverterInformation />,
+      },
+      {
+        path: "/plants/create",
+        action: plantCreation,
+        element: <CreatePlant />,
+      },
+      {
+        path: "/plants/edit/:id",
+        element: <EditPlant />,
       },
     ],
   },

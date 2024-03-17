@@ -14,7 +14,10 @@ const HeaderItems = [
 ];
 const icons = [LinkOutlined, NotificationOutlined];
 const labels = ["Inverters", "Plants"];
-const childrenLabels = [{ path: "/info", label: "Details" }];
+const childrenLabels = [
+  { path: "/info", label: "Details" },
+  { path: "/Create", label: "Generate" },
+];
 
 const items2 = icons.map((icon, index) => {
   return {
